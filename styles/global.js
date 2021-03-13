@@ -1,12 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
+import theme from './theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    color: ${theme.colors.black};
+    font-size: 14px;
   }
-  a {
-    color: lightslategray;
+  .container {
   }
+
 `
 
 export default GlobalStyle;
