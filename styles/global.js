@@ -8,7 +8,9 @@ const GlobalStyle = createGlobalStyle`
   }
   .container {
   }
-
+  img {
+    max-width: 100%;
+  }
 `
 
 export default GlobalStyle;

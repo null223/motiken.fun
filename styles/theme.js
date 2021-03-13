@@ -4,8 +4,8 @@ const colors = {
   secondary: "#fafbfc",
   secondaryBorder: "#eaecef",
   border: "#e1e4e8",
-  blueLight: "#f1f8fe",
-  blue: "#c8e1ff",
+  blue: "#f1f8fe",
+  blueBorder: "#c8e1ff",
 
   white: "#fff",
   "black": "#24292e",

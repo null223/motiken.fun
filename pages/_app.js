@@ -2,11 +2,11 @@
 import 'bootstrap/dist/css/bootstrap-reboot.css'
 import 'bootstrap/dist/css/bootstrap-grid.css'
 import { ThemeProvider } from 'styled-components'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import PretendBody from '../components/PretendBody'
-import GlobalStyle from '../styles/global.js'
-import theme from '../styles/theme.js'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import PretendBody from '@/components/PretendBody'
+import GlobalStyle from '@/styles/global.js'
+import theme from '@/styles/theme.js'
 
 function MyApp({ Component, pageProps }) {
   return (
