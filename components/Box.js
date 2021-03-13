@@ -41,8 +41,5 @@ ${({theme}) => css`
     }
   }
   & .box-body {
-    & img {
-      width: 100%;
-    }
   }
 `}`
