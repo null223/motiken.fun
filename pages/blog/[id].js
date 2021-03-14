@@ -1,6 +1,16 @@
-// pages/blog/[id].js
+import { htmlToText } from 'html-to-text'
+
+import Head from '@/components/Head'
+
 export default function BlogId({ blog }) {
-  return (
+  return (<>
+    <Head>
+      <title>motiken.fun マイページ</title>
+      <meta property="og:title" content={blog.title+" motiken.fun"} />
+      <meta property="og:description" content={htmlToText(blog.body, {limits: 40})} />
+      <meta property="og:image" content={blog.image.url} />
+      <meta property="og:type" content="article" />
+    </Head>
     <main>
       <div className="container">
         <img src={blog.image.url} alt={blog.title} />
@@ -14,7 +24,7 @@ export default function BlogId({ blog }) {
         />
       </div>
     </main>
-  );
+  </>);
 }
 
 // 静的生成のためのパスを指定します

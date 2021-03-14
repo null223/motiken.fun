@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
+import Head from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
@@ -23,6 +24,13 @@ export const getStaticProps = async () => {
 
 function About({ data }) {
   return <>
+    <Head>
+      <title>motiken.fun ポートフォリオ</title>
+      <meta property="og:title" content="motiken.fun ポートフォリオ" />
+      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
+      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
+      <meta property="og:type" content="article" />
+    </Head>
     <PageHead name="About">
       <p>ポートフォリオ</p>
     </PageHead>
