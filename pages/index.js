@@ -11,7 +11,7 @@ export const getStaticProps = async () => {
   const key = {
     headers: {'X-API-KEY': process.env.API_KEY},
   }
-  const data = await fetch(`https://${process.env.API_NAME}.microcms.io/api/v1/blog`, key)
+  const data = await fetch(`https://${process.env.API_NAME}.microcms.io/api/v1/blog?fields=title,icon&limit=30`, key)
     .then(res => res.json())
     .catch(() => null);
   return {
@@ -43,7 +43,7 @@ export default function Home({ blog }) {
               {blog.map(blog => (
                 <li key={blog.id}>
                   <Link href={`blog/${blog.id}`}>
-                    <a>{blog.title}</a>
+                    <a>{blog.icon+" "+blog.title}</a>
                   </Link>
                 </li>
               ))}

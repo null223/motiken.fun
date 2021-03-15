@@ -89,9 +89,6 @@ export default About
 
 const StAbout = styled.section`
 ${({theme}) => css`
-  & .fa-twitter-square {
-    color: #1DA1F2 !important;
-  }
 `}`
 
 const StProfile = styled.section`
@@ -136,6 +133,23 @@ ${({theme, bgImage}) => css`
     text-align: center;
     & h2, & p {
       color: ${theme.colors.white};
+    }
+    & p {
+      white-space: pre-wrap;
+    }
+  }
+  .profile-sns {
+    & a {
+      display: inline-block;
+      padding: 4px 6px 3px;
+      border-radius: 50%;
+      transition: opacity .2s ease;
+      &:hover {
+        opacity: .7;
+      }
+      & .fa-twitter-square {
+        color: #1DA1F2 !important;
+      }
     }
   }
 `}`
