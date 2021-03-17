@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
+import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
@@ -21,19 +22,8 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Home({ blog }) {
+function PageMain({ blog }) {
   return <>
-    <Head>
-      <title>motiken.fun マイページ</title>
-      <meta property="og:title" content="motiken.fun マイページ" />
-      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="website" />
-      <OgUrl path="/" />
-    </Head>
-    <PageHead name="Top">
-      <p>仮置き</p>
-    </PageHead>
     <main>
       <div className="container">
         <StBlog>
@@ -55,6 +45,27 @@ export default function Home({ blog }) {
     </main>
   </>
 }
+
+function Home({ blog }) {
+  return <>
+    <Head>
+      <title>motiken.fun マイページ</title>
+      <meta property="og:title" content="motiken.fun マイページ" />
+      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
+      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
+      <meta property="og:type" content="website" />
+      <OgUrl path="/" />
+    </Head>
+    <BaseLayout>
+      <PageHead name="Top">
+        <p>仮置き</p>
+      </PageHead>
+      <PageMain blog={blog} />
+    </BaseLayout>
+  </>
+}
+
+export default Home
 
 const StBlog = styled.section`
 ${({theme}) => css`

@@ -1,22 +1,12 @@
 import styled, { css } from 'styled-components'
 
+import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
-function ContactThanks() {
+function PageMain() {
   return <>
-    <Head>
-      <title>motiken.fun お問い合わせ送信ありがとうございます</title>
-      <meta property="og:title" content="motiken.fun お問い合わせ送信ありがとうございます" />
-      <meta property="og:description" content="お問い合わせ送信ありがとうございます　motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="website" />
-      <OgUrl path="/contact/thanks" />
-    </Head>
-    <PageHead name="Contact Complete">
-      <p>お問い合わせありがとうございます。</p>
-    </PageHead>
     <main>
       <div className="container">
         <Box>
@@ -28,6 +18,25 @@ function ContactThanks() {
         </Box>
       </div>
     </main>
+  </>
+}
+
+function ContactThanks() {
+  return <>
+    <Head>
+      <title>motiken.fun お問い合わせ送信ありがとうございます</title>
+      <meta property="og:title" content="motiken.fun お問い合わせ送信ありがとうございます" />
+      <meta property="og:description" content="お問い合わせ送信ありがとうございます　motikenサイト 現在、鋭意製作中" />
+      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
+      <meta property="og:type" content="website" />
+      <OgUrl path="/contact/thanks" />
+    </Head>
+    <BaseLayout>
+      <PageHead name="Contact Complete">
+        <p>お問い合わせありがとうございます。</p>
+      </PageHead>
+      <PageMain />
+    </BaseLayout>
   </>
 }
 

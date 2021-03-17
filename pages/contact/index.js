@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 import { useForm, ValidationError } from '@formspree/react'
 
+import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
@@ -51,19 +52,8 @@ function ContactForm() {
   )
 }
 
-function ContactIndex() {
+function PageMain() {
   return <>
-    <Head>
-      <title>motiken.fun お問い合わせページ</title>
-      <meta property="og:title" content="motiken.fun お問い合わせページ" />
-      <meta property="og:description" content="お問い合わせページ　motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="website" />
-      <OgUrl path="/contact" />
-    </Head>
-    <PageHead name="Contact">
-      <p>お問い合わせ</p>
-    </PageHead>
     <main>
       <StContact className="container">
         <Box
@@ -85,6 +75,25 @@ function ContactIndex() {
         </Box>
       </StContact>
     </main>
+  </>
+}
+
+function ContactIndex() {
+  return <>
+    <Head>
+      <title>motiken.fun お問い合わせページ</title>
+      <meta property="og:title" content="motiken.fun お問い合わせページ" />
+      <meta property="og:description" content="お問い合わせページ　motikenサイト 現在、鋭意製作中" />
+      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
+      <meta property="og:type" content="website" />
+      <OgUrl path="/contact" />
+    </Head>
+    <BaseLayout>
+      <PageHead name="Contact">
+        <p>お問い合わせ</p>
+      </PageHead>
+      <PageMain />
+    </BaseLayout>
   </>
 }
 

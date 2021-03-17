@@ -1,6 +1,7 @@
 import { htmlToText } from 'html-to-text'
 import styled, { css } from 'styled-components'
 
+import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import Box from '@/components/Box'
 
@@ -35,16 +36,8 @@ export const getStaticProps = async context => {
   };
 };
 
-export default function BlogId({ blog }) {
+function PageMain({ blog }) {
   return (<>
-    <Head>
-      <title>{blog.title+" motiken.fun"}</title>
-      <meta property="og:title" content={blog.title+" motiken.fun"} />
-      <meta property="og:description" content={htmlToText(blog.body, {limits: 40})} />
-      <meta property="og:image" content={blog.image ? blog.image.url : require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="article" />
-      <OgUrl path={`/blog/${blog.id}`} />
-    </Head>
     <main>
       <div className="container mt-4">
         <Box>
@@ -68,6 +61,24 @@ export default function BlogId({ blog }) {
     </main>
   </>);
 }
+
+function BlogId({ blog }) {
+  return <>
+    <Head>
+      <title>{blog.title+" motiken.fun"}</title>
+      <meta property="og:title" content={blog.title+" motiken.fun"} />
+      <meta property="og:description" content={htmlToText(blog.body, {limits: 40})} />
+      <meta property="og:image" content={blog.image ? blog.image.url : require("@/assets/images/icon.jpg")} />
+      <meta property="og:type" content="article" />
+      <OgUrl path={`/blog/${blog.id}`} />
+    </Head>
+    <BaseLayout>
+      <PageMain blog={blog} />
+    </BaseLayout>
+  </>
+}
+
+export default BlogId
 
 const StBlogId = styled.div`
 ${({theme}) => css`

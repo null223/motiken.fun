@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
+import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
@@ -22,22 +23,12 @@ export const getStaticProps = async () => {
   };
 };
 
-function About({ data }) {
+function PageMain({ data }) {
   return <>
-    <Head>
-      <title>motiken.fun ポートフォリオ</title>
-      <meta property="og:title" content="motiken.fun ポートフォリオ" />
-      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="article" />
-      <OgUrl path="/about" />
-    </Head>
-    <PageHead name="About">
-      <p>ポートフォリオ</p>
-    </PageHead>
     <main>
       <StProfile bgImage={data.profile_bg.url}>
         <div className="p-3">
+          <div className="profile-bg" />
           <div className="profile-image">
             <div><img src={data.icon.url} alt={data.name} /></div>
           </div>
@@ -54,6 +45,7 @@ function About({ data }) {
             </div>
           </div>
         </div>
+        <div className="pattern-diagonal-lines-sm h-5"></div>
       </StProfile>
       <div className="container">
         <StAbout>
@@ -86,6 +78,25 @@ function About({ data }) {
   </>
 }
 
+function About({ data }) {
+  return <>
+    <Head>
+      <title>motiken.fun ポートフォリオ</title>
+      <meta property="og:title" content="motiken.fun ポートフォリオ" />
+      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
+      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
+      <meta property="og:type" content="article" />
+      <OgUrl path="/about" />
+    </Head>
+    <BaseLayout>
+      <PageHead name="About">
+        <p>ポートフォリオ</p>
+      </PageHead>
+      <PageMain data={data} />
+    </BaseLayout>
+  </>
+}
+
 export default About
 
 const StAbout = styled.section`
@@ -98,23 +109,33 @@ ${({theme, bgImage}) => css`
   width: 100%;
   margin-top: -3rem;
   margin-bottom: 3rem;
-  background-image: url(${bgImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  &::before {
-    content: "";
-    display: block;
+  .profile-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    background-color: ${theme.colors.black};
-    opacity: .7;
+    background-image: url(${bgImage});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: ${theme.colors.black};
+      opacity: .7;
+    }
   }
   & > div {
     position: relative;
   }
   .profile-image {
+    position: relative;
     margin: 30px auto 0;
     display: block;
     max-width: 250px;
@@ -128,6 +149,7 @@ ${({theme, bgImage}) => css`
     }
   }
   .profile-body {
+    position: relative;
     max-width: 600px;
     width: 100%;
     margin: 32px auto 50px;
@@ -152,6 +174,10 @@ ${({theme, bgImage}) => css`
         color: #1DA1F2 !important;
       }
     }
+  }
+  & .h-5 {
+    height: 1.25rem;
+    color: ${theme.colors.black};
   }
 `}`
 
