@@ -1,10 +1,7 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import theme from '@/styles/theme'
 
 const TemplateHead = (props) => {
-  const router = useRouter()
-  const domain = `https://${process.env.NEXT_PUBLIC_DOMAIN}`
   return (
     <Head>
       {props.children}
@@ -15,7 +12,6 @@ const TemplateHead = (props) => {
       <meta property="og:description" content={props.description} />
       <meta property="og:image" content={props.image.url} />
       */}
-      <meta property="og:url" content={domain + router.pathname} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={"@" + process.env.NEXT_PUBLIC_TWITTER_ID} />
       <meta property="og:site_name" content="motiken.fun" />
@@ -29,6 +25,11 @@ const TemplateHead = (props) => {
       <meta name="theme-color" content={theme.colors.primary} />
     </Head>
   )
+}
+
+export const OgUrl = ({path}) => {
+  const domain = `https://${process.env.NEXT_PUBLIC_DOMAIN}`
+  return <meta property="og:url" content={domain + path} />
 }
 
 export default TemplateHead

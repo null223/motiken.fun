@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
-import Head from '@/components/Head'
+import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
@@ -29,6 +29,7 @@ export default function Home({ blog }) {
       <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
       <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
       <meta property="og:type" content="website" />
+      <OgUrl path="/" />
     </Head>
     <PageHead name="Top">
       <p>仮置き</p>

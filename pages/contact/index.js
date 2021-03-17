@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 import { useForm, ValidationError } from '@formspree/react'
 
-import Head from '@/components/Head'
+import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
@@ -59,6 +59,7 @@ function ContactIndex() {
       <meta property="og:description" content="お問い合わせページ　motikenサイト 現在、鋭意製作中" />
       <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
       <meta property="og:type" content="website" />
+      <OgUrl path="/contact" />
     </Head>
     <PageHead name="Contact">
       <p>お問い合わせ</p>

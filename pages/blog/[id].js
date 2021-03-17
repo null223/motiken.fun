@@ -1,7 +1,7 @@
 import { htmlToText } from 'html-to-text'
 import styled, { css } from 'styled-components'
 
-import Head from '@/components/Head'
+import Head, { OgUrl } from '@/components/Head'
 import Box from '@/components/Box'
 
 // 静的生成のためのパスを指定します
@@ -43,6 +43,7 @@ export default function BlogId({ blog }) {
       <meta property="og:description" content={htmlToText(blog.body, {limits: 40})} />
       <meta property="og:image" content={blog.image ? blog.image.url : require("@/assets/images/icon.jpg")} />
       <meta property="og:type" content="article" />
+      <OgUrl path={`/blog/${blog.id}`} />
     </Head>
     <main>
       <div className="container mt-4">
