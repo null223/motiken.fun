@@ -86,6 +86,7 @@ ${({theme}) => css`
   .blog-image {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1.5rem;
   }
   & h1 {
