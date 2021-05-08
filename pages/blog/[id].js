@@ -1,21 +1,15 @@
+import { useRouter } from 'next/router'
 import { htmlToText } from 'html-to-text'
 import styled, { css } from 'styled-components'
 
 import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import Box from '@/components/Box'
+import Custom404 from '@/pages/404';
 
 // 静的生成のためのパスを指定します
-export const getStaticPaths = async () => {
-  const key = {
-    headers: {'X-API-KEY': process.env.API_KEY},
-  };
-  const data = await fetch(`https://${process.env.API_NAME}.microcms.io/api/v1/blog?fields=id&limit=500`, key)
-    .then(res => res.json())
-    .catch(() => null);
-  const paths = data.contents.map(content => `/blog/${content.id}`);
-  return {paths, fallback: false};
-};
+export const getStaticPaths = () => ({paths: [], fallback: true})
+
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async context => {
@@ -33,6 +27,7 @@ export const getStaticProps = async context => {
     props: {
       blog: data,
     },
+    revalidate: 1,
   };
 };
 
@@ -63,6 +58,11 @@ function PageMain({ blog }) {
 }
 
 function BlogId({ blog }) {
+  const router = useRouter()
+
+  if (!blog) return <Custom404 />
+  if (!router.isFallback && !blog?.id) return <Custom404 />
+
   return <>
     <Head>
       <title>{blog.title+" motiken.fun"}</title>
