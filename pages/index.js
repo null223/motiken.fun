@@ -37,13 +37,13 @@ function PageMain({ blog }) {
               <p className="font-weight-bold mb-2">LINEでワードウルフ</p>
               <p className="mb-2">LINEの公式アカウントを使って、ワードウルフのゲーム進行を任せちゃおうという試みです。</p>
               <p className="sup">ワードウルフ</p>
-              <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ここ数日めっちゃ頑張ってた<br/>「LINEでワードウルフ」<br/>とりあえず完成しました〜！！<br/><br/>また遊んでくれる方いらっしゃったらぜひ！！<br/>（2人検証しかできなかったからまだβ版って感じ笑） <a href="https://t.co/FuCH2QVPem">pic.twitter.com/FuCH2QVPem</a></p>&mdash; なる (@null__me) <a href="https://twitter.com/null__me/status/1388793022939160584?ref_src=twsrc%5Etfw">May 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote className="twitter-tweet"><p lang="ja" dir="ltr">ここ数日めっちゃ頑張ってた<br/>「LINEでワードウルフ」<br/>とりあえず完成しました〜！！<br/><br/>また遊んでくれる方いらっしゃったらぜひ！！<br/>（2人検証しかできなかったからまだβ版って感じ笑） <a href="https://t.co/FuCH2QVPem">pic.twitter.com/FuCH2QVPem</a></p>&mdash; なる (@null__me) <a href="https://twitter.com/null__me/status/1388793022939160584?ref_src=twsrc%5Etfw">May 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <p className="font-weight-bold mb-2">このサイト</p>
               <p>このサイトはWordPressみたいな既存のブログシステムを使わずに自由にコンテンツを設計できるようにつくりました。</p>
               <p>無駄な処理とかを極力省いて高速にサイトが動くようになりました。</p>
               <p className="mb-2">いつかしっかりデザインを作って、アニメーションとイラストでいっぱいのサイトが作るのが目標です！</p>
               <p className="sup">パフォーマンスチェックしたときの様子</p>
-              <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">自分のサイトオールグリーンだった！いえ〜い！<br/><br/>そのうちコンテンツ増やしたりしたいなぁ <a href="https://t.co/VCnOLLZJhS">pic.twitter.com/VCnOLLZJhS</a></p>&mdash; なる (@null__me) <a href="https://twitter.com/null__me/status/1392448627834966018?ref_src=twsrc%5Etfw">May 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote className="twitter-tweet"><p lang="ja" dir="ltr">自分のサイトオールグリーンだった！いえ〜い！<br/><br/>そのうちコンテンツ増やしたりしたいなぁ <a href="https://t.co/VCnOLLZJhS">pic.twitter.com/VCnOLLZJhS</a></p>&mdash; なる (@null__me) <a href="https://twitter.com/null__me/status/1392448627834966018?ref_src=twsrc%5Etfw">May 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <p></p>
             </div>
           </Box>
@@ -72,7 +72,7 @@ function Home({ blog }) {
       <title>motiken.fun マイページ</title>
       <meta property="og:title" content="motiken.fun マイページ" />
       <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
+      <meta property="og:image" content={"https://" + process.env.NEXT_PUBLIC_DOMAIN + require("../assets/images/ogp.png")} />
       <meta property="og:type" content="website" />
       <OgUrl path="/" />
     </Head>
