@@ -23,6 +23,7 @@ ${({theme}) => css`
   border: 1px solid ${theme.colors.border};
   border-radius: 8px;
   padding: 15px 0;
+  margin-bottom: 1.5rem;
 `}`
 
 const StBox2 = styled.div`
