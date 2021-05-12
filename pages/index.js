@@ -77,7 +77,7 @@ function Home({ blog }) {
       <OgUrl path="/" />
     </Head>
     <BaseLayout>
-      <img src={require('../assets/images/hero-video.gif')} alt="モチ研" />
+      <img src={require('../assets/images/hero-video_cmp.gif')} alt="モチ研" />
       <PageHead name="Top">
         <p>はじめまして、なるです。</p>
       </PageHead>
