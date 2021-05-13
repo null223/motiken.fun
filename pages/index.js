@@ -77,7 +77,7 @@ function Home({ blog }) {
       <OgUrl path="/" />
     </Head>
     <BaseLayout>
-      <img src={require('../assets/images/hero-video_cmp.gif')} alt="モチ研" />
+      <Hero src={require('../assets/images/hero-video_cmp.gif')} alt="モチ研" />
       <PageHead name="Top">
         <p>はじめまして、なるです。</p>
       </PageHead>
@@ -87,6 +87,10 @@ function Home({ blog }) {
 }
 
 export default Home
+
+const Hero = styled.img`
+  width: 100%;
+`
 
 const StBlog = styled.section`
 ${({theme}) => css`
