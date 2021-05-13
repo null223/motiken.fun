@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router'
 import { htmlToText } from 'html-to-text'
 import styled, { css } from 'styled-components'
+import dayjs from '@/config/dayjs'
 
 import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import Box from '@/components/Box'
-import Custom404 from '@/pages/404';
+import Custom404 from '@/pages/404'
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = () => ({paths: [], fallback: true})
@@ -43,7 +44,7 @@ function PageMain({ blog }) {
               </div>
             )}
             <h1>{blog.title}</h1>
-            <p>{blog.publishedAt}</p>
+            <p>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY/MM/DD')}</p>
             <p className="category">{blog.category && `${blog.category.name}`}</p>
             <div
               dangerouslySetInnerHTML={{
