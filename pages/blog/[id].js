@@ -9,7 +9,7 @@ import Box from '@/components/Box'
 import Custom404 from '@/pages/404'
 
 // 静的生成のためのパスを指定します
-export const getStaticPaths = () => ({paths: [], fallback: true})
+export const getStaticPaths = () => ({paths: [], fallback: 'blocking'})
 
 
 // データをテンプレートに受け渡す部分の処理を記述します
@@ -28,7 +28,6 @@ export const getStaticProps = async context => {
     props: {
       blog: data,
     },
-    revalidate: 1,
   };
 };
 
