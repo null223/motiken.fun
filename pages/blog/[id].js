@@ -67,6 +67,7 @@ function BlogId({ blog }) {
     <Head>
       <title>{blog.title+" motiken.fun"}</title>
       <meta property="og:title" content={blog.title+" motiken.fun"} />
+      <meta name="description" content={htmlToText(blog.body, {limits: 40})} />
       <meta property="og:description" content={htmlToText(blog.body, {limits: 40})} />
       <meta property="og:image" content={blog.image ? blog.image.url : require("@/assets/images/icon.jpg")} />
       <meta property="og:type" content="article" />

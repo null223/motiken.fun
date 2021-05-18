@@ -71,13 +71,16 @@ function Home({ blog }) {
     <Head>
       <title>motiken.fun マイページ</title>
       <meta property="og:title" content="motiken.fun マイページ" />
+      <meta name="description" content="motikenサイト 現在、鋭意製作中"/>
       <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
       <meta property="og:image" content={"https://" + process.env.NEXT_PUBLIC_DOMAIN + require("../assets/images/ogp.png")} />
       <meta property="og:type" content="website" />
       <OgUrl path="/" />
     </Head>
     <BaseLayout>
-      <Hero src={require('../assets/images/hero-video_cmp.gif')} alt="モチ研" />
+      <Hero>
+        <img src={require('../assets/images/hero-video_cmp.gif')} alt="モチ研" />
+      </Hero>
       <PageHead name="Top">
         <p>はじめまして、なるです。</p>
       </PageHead>
@@ -88,8 +91,14 @@ function Home({ blog }) {
 
 export default Home
 
-const Hero = styled.img`
-  width: 100%;
+const Hero = styled.div`
+  background-color: #fbb3b4;
+  img {
+    display: block;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+  }
 `
 
 const StBlog = styled.section`

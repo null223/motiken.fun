@@ -19,6 +19,9 @@ ${({theme}) => css`
   border-bottom: 1px solid ${theme.colors.secondaryBorder};
   padding-left: 15px;
   padding-right: 15px;
+  & h1 {
+    font-family: 'FredokaOne';
+  }
   & p {
     color: ${theme.colors.gray};
   }

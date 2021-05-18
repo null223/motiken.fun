@@ -8,7 +8,7 @@ const Header = () => {
       <div className="header__title">
         <Link href="/">
           <a>
-            <i className="fas fa-globe-americas mr-2" />motiken.fun
+            motiken.fun
           </a>
         </Link>
       </div>
@@ -38,12 +38,18 @@ ${({theme}) => css`
   & a {
     color: ${theme.colors.white};
     font-weight: bold;
+    font-family: 'FredokaOne';
+    transition: opacity .3s ease;
+    &:hover {
+      color: ${theme.colors.white};
+      text-decoration: none !important;
+      opacity: .7;
+    }
   }
   .header {
     // no white here
     &__title {
       font-weight: bold;
-      font-style: italic;
     }
     &__nav {
       margin-left: auto;

@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
   }
+
+  @font-face {
+    font-family: 'FredokaOne';
+    src: url('/fonts/FredokaOne-Regular.ttf') format("truetype");
+  }
 `
 
 export default GlobalStyle;

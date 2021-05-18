@@ -83,6 +83,7 @@ function About({ data }) {
     <Head>
       <title>motiken.fun ポートフォリオ</title>
       <meta property="og:title" content="motiken.fun ポートフォリオ" />
+      <meta name="description" content="motikenサイト 現在、鋭意製作中" />
       <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
       <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
       <meta property="og:type" content="article" />
