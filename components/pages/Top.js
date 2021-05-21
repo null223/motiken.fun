@@ -6,16 +6,16 @@ import Box from '@/components/Box'
 const PageMain = ({ about, blog }) => (
   <main>
     <StSection className="pb-2">
+      <h2 className="title">{about.motiken.title}</h2>
+      <p className="body">{about.motiken.body}</p>
+    </StSection>
+    <StSection>
       <div className="title profile">
         {/*<div><img src={about.profiles.icon.url + "?w=256"} alt={about.name} /></div>*/}
         <h2>{about.profiles.name}</h2>
         <p className="profile-work">{about.profiles.work}</p>
       </div>
       <p className="body">{about.profiles.body}</p>
-    </StSection>
-    <StSection>
-      <h2 className="title">{about.motiken.title}</h2>
-      <p className="body">{about.motiken.body}</p>
     </StSection>
     <StSection colored>
       <h2 className="title">Career</h2>

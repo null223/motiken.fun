@@ -60,10 +60,10 @@ function PageMain() {
           header="お問い合わせフォーム"
         >
           <div className="px-3 mb-4">
-            <h2>お問い合わせをする前に</h2>
+            {/*<h2>お問い合わせをする前に</h2>
             <p className="m-0">基本的にTwitterやSlackなどのSNSでの連絡をお願いしています。</p>
             <p className="m-0">なのでこのフォームはSNSでの連絡が取れない方のみご入力してください。</p>
-            <p className="m-0">本音を言うと月50件までしか受け取れないプランでフォームを作成しているからです。</p>
+            <p className="m-0">本音を言うと月50件までしか受け取れないプランでフォームを作成しているからです。</p>*/}
           </div>
           <ContactForm />
           <div className="tips px-3">
