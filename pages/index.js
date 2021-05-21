@@ -34,10 +34,10 @@ export const getStaticProps = async () => {
 function Home(props) {
   return <>
     <Head>
-      <title>motiken.fun マイページ</title>
-      <meta property="og:title" content="motiken.fun マイページ" />
-      <meta name="description" content="motikenサイト 現在、鋭意製作中"/>
-      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
+      <title>モチ研</title>
+      <meta property="og:title" content="モチ研" />
+      <meta name="description" content="モチ研サイト 現在、鋭意製作中"/>
+      <meta property="og:description" content="モチ研サイト 現在、鋭意製作中" />
       <meta property="og:image" content={"https://" + process.env.NEXT_PUBLIC_DOMAIN + require("../assets/images/ogp.png")} />
       <meta property="og:type" content="website" />
       <OgUrl path="/" />

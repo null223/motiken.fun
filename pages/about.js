@@ -23,8 +23,8 @@ export const getStaticProps = async () => {
 function About(props) {
   return <>
     <Head>
-      <title>motiken.fun ポートフォリオ</title>
-      <meta property="og:title" content="motiken.fun ポートフォリオ" />
+      <title>motiken.fun サイトについて</title>
+      <meta property="og:title" content="motiken.fun サイトについて" />
       <meta name="description" content="motikenサイト 現在、鋭意製作中" />
       <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
       <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
@@ -33,7 +33,7 @@ function About(props) {
     </Head>
     <BaseLayout>
       <PageHead name="About">
-        <p>ポートフォリオ</p>
+        <p>サイトについて</p>
       </PageHead>
       <PageMain {...props} />
     </BaseLayout>
