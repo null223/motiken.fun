@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
-import  Api from '@/config/api'
+import Api from '@/config/api'
 import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
+import PageMain from '@/components/pages/About'
 
 export const getStaticProps = async () => {
   const data = await Api
@@ -19,62 +20,7 @@ export const getStaticProps = async () => {
   };
 };
 
-function PageMain({ data }) {
-  return <>
-    <main>
-      <StProfile bgImage={data.profile_bg.url}>
-        <div className="p-3">
-          <div className="profile-bg" />
-          <div className="profile-image">
-            <div><img src={data.icon.url} alt={data.name} /></div>
-          </div>
-          <div className="profile-body">
-            <h2>{data.name}</h2>
-            <p>{data.profile}</p>
-            <div className="profile-sns">
-              <Link href={"https://twitter.com/" + process.env.NEXT_PUBLIC_TWITTER_ID}>
-                <a
-                  target="_blank"
-                  rel="noopener"
-                ><i className="fab fa-twitter-square fa-2x" /></a>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="pattern-diagonal-lines-sm h-5"></div>
-      </StProfile>
-      <div className="container">
-        <StAbout>
-          
-          <Box
-            header="仕事について"
-          >
-            <div className="px-4">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.body
-                }}
-              />
-            </div>
-          </Box>
-          <Box
-            header="このサイトについて"
-          >
-            <div className="px-4">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.about
-                }}
-              />
-            </div>
-          </Box>
-        </StAbout>
-      </div>
-    </main>
-  </>
-}
-
-function About({ data }) {
+function About(props) {
   return <>
     <Head>
       <title>motiken.fun ポートフォリオ</title>
@@ -89,92 +35,27 @@ function About({ data }) {
       <PageHead name="About">
         <p>ポートフォリオ</p>
       </PageHead>
-      <PageMain data={data} />
+      <PageMain {...props} />
     </BaseLayout>
   </>
 }
 
 export default About
 
-const StAbout = styled.section`
-${({theme}) => css`
-`}`
-
-const StProfile = styled.section`
-${({theme, bgImage}) => css`
-  position: relative;
-  width: 100%;
-  margin-top: -3rem;
-  margin-bottom: 3rem;
-  .profile-bg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(${bgImage});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background-color: ${theme.colors.black};
-      opacity: .7;
-    }
+const StSectionContainer = styled.section`
+${({theme, colored}) => css`
+  padding: 88px 0;
+  background-color: ${colored ? theme.colors.secondaryBorder : theme.colors.white};
+  .container {
+    max-width: 620px;
   }
-  & > div {
-    position: relative;
-  }
-  .profile-image {
-    position: relative;
-    margin: 30px auto 0;
-    display: block;
-    max-width: 250px;
-    & > div {
-      border-radius: 50%;
-      overflow: hidden;
-      border: 5px solid ${theme.colors.white};
-    }
-    @media (max-width: 768px) {
-      max-width: 200px;
-    }
-  }
-  .profile-body {
-    position: relative;
-    max-width: 600px;
-    width: 100%;
-    margin: 32px auto 50px;
+  .title {
+    color: ${theme.colors.black_light};
     text-align: center;
-    & h2, & p {
-      color: ${theme.colors.white};
-    }
-    & p {
-      white-space: pre-wrap;
-    }
   }
-  .profile-sns {
-    & a {
-      display: inline-block;
-      padding: 4px 6px 3px;
-      border-radius: 50%;
-      transition: opacity .2s ease;
-      &:hover {
-        opacity: .7;
-      }
-      & .fa-twitter-square {
-        color: #1DA1F2 !important;
-      }
-    }
-  }
-  & .h-5 {
-    height: 1.25rem;
-    color: ${theme.colors.black};
+  .body {
+    white-space: pre-wrap;
   }
 `}`
 
+const StSection = ({children, ...props}) => <StSectionContainer {...props} ><div className="container">{children}</div></StSectionContainer>
