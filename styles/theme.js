@@ -7,7 +7,7 @@ const colors = {
   blue: "#f1f8fe",
   blueBorder: "#c8e1ff",
 
-  career_year: "#f29404",
+  orange: "#f29404",
 
   white: "#fff",
   black: "#24292e",

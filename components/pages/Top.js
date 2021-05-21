@@ -34,7 +34,7 @@ const PageMain = ({ about, blog }) => (
       <dl className="skill">
         {about.skills.map(skill => (
           <>
-            <dt className="skill-title">{skill.title}</dt>
+            <dt className="skill-title"><i class="material-icons-outlined">{skill.icon}</i>{skill.title}</dt>
             <dd className="skill-body">{skill.body}</dd>
           </>
         ))}
@@ -49,7 +49,7 @@ const PageMain = ({ about, blog }) => (
       <dl className="skill">
         {about.likes.map(like => (
           <>
-             <dt className="skill-title">{like.title}</dt>
+             <dt className="skill-title"><i class="material-icons-outlined">{like.icon}</i>{like.title}</dt>
              <dd className="skill-body">{like.body}</dd>
           </>
         ))}
@@ -122,7 +122,7 @@ ${({theme, colored}) => css`
       line-height: 42px;
       text-align: center;
       border-radius: 50%;
-      background-color: ${theme.colors.career_year};
+      background-color: ${theme.colors.orange};
       color: ${theme.colors.white};
     }
     dd {
@@ -145,7 +145,17 @@ ${({theme, colored}) => css`
     display: flex;
     flex-wrap: wrap;
     &-title {
+      line-height: 2;
+      position: relative;
       width: 30%;
+      padding-left: 2rem;
+      font-size: 1rem;
+      & i {
+        line-height: 32px;
+        position: absolute;
+        left: 0;
+        color: ${theme.colors.orange};
+      }
     }
     &-body {
       color: ${theme.colors.black_light};

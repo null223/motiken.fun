@@ -23,6 +23,7 @@ const TemplateHead = (props) => {
       <link rel="icon" href={props.icon.url + "?w=62"} sizes="62x62" type="image/png" />*/}
       <meta name="msapplication-TileColor" content={theme.colors.primary} />
       <meta name="theme-color" content={theme.colors.primary} />
+      <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet" />
     </Head>
   )
 }
