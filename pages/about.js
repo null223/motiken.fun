@@ -1,20 +1,16 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
+import  Api from '@/config/api'
 import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
 export const getStaticProps = async () => {
-  const key = {
-    headers: {'X-API-KEY': process.env.API_KEY},
-  };
-  const data = await fetch(
-    `https://${process.env.API_NAME}.microcms.io/api/v1/about/`,
-    key,
-  )
-    .then(res => res.json())
+  const data = await Api
+    .get({endpoint: 'about'})
+    .then(res => res)
     .catch(() => null);
   return {
     props: {

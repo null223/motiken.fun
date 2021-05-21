@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { htmlToText } from 'html-to-text'
 import styled, { css } from 'styled-components'
 import dayjs from '@/config/dayjs'
+import Api from '@/config/api'
 
 import BaseLayout from '@/components/BaseLayout'
 import Head, { OgUrl } from '@/components/Head'
@@ -14,15 +15,12 @@ export const getStaticPaths = () => ({paths: [], fallback: 'blocking'})
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async context => {
-  const id = context.params.id;
-  const key = {
-    headers: {'X-API-KEY': process.env.API_KEY},
-  };
-  const data = await fetch(
-    `https://${process.env.API_NAME}.microcms.io/api/v1/blog/${id}`,
-    key,
-  )
-    .then(res => res.json())
+  const data = await Api
+    .get({
+      endpoint: 'blog',
+      contentId: context.params.id
+    })
+    .then(res => res)
     .catch(() => null);
   return {
     props: {

@@ -490,6 +490,14 @@ bytes@3.1.0:
   resolved "https://registry.npmjs.org/bytes/-/bytes-3.1.0.tgz"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
+call-bind@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c"
+  integrity sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==
+  dependencies:
+    function-bind "^1.1.1"
+    get-intrinsic "^1.0.2"
+
 camelize@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/camelize/-/camelize-1.0.0.tgz"
@@ -900,6 +908,20 @@ fsevents@~2.3.1:
   resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
+function-bind@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
+  integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+
+get-intrinsic@^1.0.2:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
+  integrity sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q==
+  dependencies:
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.1"
+
 get-orientation@1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/get-orientation/-/get-orientation-1.1.2.tgz"
@@ -938,6 +960,18 @@ has-flag@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
+
+has-symbols@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423"
+  integrity sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==
+
+has@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
+  integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  dependencies:
+    function-bind "^1.1.1"
 
 hash-base@^3.0.0:
   version "3.1.0"
@@ -1196,6 +1230,14 @@ merge-stream@^2.0.0:
   resolved "https://registry.npmjs.org/merge-stream/-/merge-stream-2.0.0.tgz"
   integrity sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
 
+microcms-js-sdk@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/microcms-js-sdk/-/microcms-js-sdk-1.0.0.tgz#7fad384086f7e0c2b6a870a1a4c3af6cfb8dfdca"
+  integrity sha512-FN2kN2TcfP5wrQLFuOSOMgC6F9tropnMbq+Yty43243gNs2acoO10Hg/Ncdq6ffpml+FG2cr3Wq362Pq1dU89A==
+  dependencies:
+    node-fetch "^2.6.1"
+    qs "^6.10.1"
+
 miller-rabin@^4.0.0:
   version "4.0.1"
   resolved "https://registry.npmjs.org/miller-rabin/-/miller-rabin-4.0.1.tgz"
@@ -1304,7 +1346,7 @@ next@10.0.8:
     vm-browserify "1.1.2"
     watchpack "2.1.1"
 
-node-fetch@2.6.1, node-fetch@~2.6.0:
+node-fetch@2.6.1, node-fetch@^2.6.1, node-fetch@~2.6.0:
   version "2.6.1"
   resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -1359,6 +1401,11 @@ object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+
+object-inspect@^1.9.0:
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.10.3.tgz#c2aa7d2d09f50c99375704f7a0adf24c5782d369"
+  integrity sha512-e5mCJlSH7poANfC8z8S9s9S2IN5/4Zb3aZ33f5s8YqoazCFzNLloLU8r5VCG+G7WoqLvAAZoVMcy3tp/3X0Plw==
 
 os-browserify@^0.3.0:
   version "0.3.0"
@@ -1536,6 +1583,13 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+qs@^6.10.1:
+  version "6.10.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
+  integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
+  dependencies:
+    side-channel "^1.0.4"
 
 querystring-es3@^0.2.0:
   version "0.2.1"
@@ -1726,6 +1780,15 @@ shell-quote@1.7.2:
   version "1.7.2"
   resolved "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.2.tgz"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+
+side-channel@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/side-channel/-/side-channel-1.0.4.tgz#efce5c8fdc104ee751b25c58d4290011fa5ea2cf"
+  integrity sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==
+  dependencies:
+    call-bind "^1.0.0"
+    get-intrinsic "^1.0.2"
+    object-inspect "^1.9.0"
 
 slick-carousel@^1.8.1:
   version "1.8.1"
