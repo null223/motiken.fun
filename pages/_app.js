@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap-grid.css'
 
 import { ThemeProvider } from 'styled-components'
 import { DefaultSeo } from 'next-seo'
+import { useRouter } from 'next/router'
+import * as gtag from '../lib/gtag'
 import Head from 'next/head'
 import SEO from '@/next-seo.config'
 import PretendBody from '@/components/PretendBody'
@@ -13,6 +15,18 @@ import GlobalStyle from '@/styles/global.js'
 import theme from '@/styles/theme.js'
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
