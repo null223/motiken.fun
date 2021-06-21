@@ -5,7 +5,7 @@ import dayjs from '@/config/dayjs'
 import Api from '@/config/api'
 
 import BaseLayout from '@/components/BaseLayout'
-import Head, { OgUrl } from '@/components/Head'
+import { NextSeo } from 'next-seo'
 import Box from '@/components/Box'
 import Custom404 from '@/pages/404'
 
@@ -62,15 +62,14 @@ function BlogId({ blog }) {
   if (!router.isFallback && !blog?.id) return <Custom404 />
 
   return <>
-    <Head>
-      <title>{blog.title+" motiken.fun"}</title>
-      <meta property="og:title" content={blog.title+" motiken.fun"} />
-      <meta name="description" content={htmlToText(blog.body, {limits: 40})} />
-      <meta property="og:description" content={htmlToText(blog.body, {limits: 40})} />
-      <meta property="og:image" content={blog.image ? blog.image.url : require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="article" />
-      <OgUrl path={`/blog/${blog.id}`} />
-    </Head>
+    <NextSeo
+      title={blog.title}
+      description={htmlToText(blog.body, {limits: 40})}
+      openGraph={{
+        type: "article",
+        images: [{url: blog.image ? blog.image.url : require("@/assets/images/ogp.png")}]
+      }}
+    />
     <BaseLayout>
       <PageMain blog={blog} />
     </BaseLayout>

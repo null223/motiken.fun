@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 import Api from '@/config/api'
 import BaseLayout from '@/components/BaseLayout'
-import Head, { OgUrl } from '@/components/Head'
+import { NextSeo } from 'next-seo'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 import PageMain from '@/components/pages/About'
@@ -22,15 +22,10 @@ export const getStaticProps = async () => {
 
 function About(props) {
   return <>
-    <Head>
-      <title>motiken.fun サイトについて</title>
-      <meta property="og:title" content="motiken.fun サイトについて" />
-      <meta name="description" content="motikenサイト 現在、鋭意製作中" />
-      <meta property="og:description" content="motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="article" />
-      <OgUrl path="/about" />
-    </Head>
+    <NextSeo
+      title="サイトについて"
+      openGraph={{type:"article"}}
+    />
     <BaseLayout>
       <PageHead name="About">
         <p>サイトについて</p>

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import BaseLayout from '@/components/BaseLayout'
-import Head, { OgUrl } from '@/components/Head'
+import { NextSeo } from 'next-seo'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
@@ -23,14 +23,10 @@ function PageMain() {
 
 function ContactThanks() {
   return <>
-    <Head>
-      <title>motiken.fun お問い合わせ送信ありがとうございます</title>
-      <meta property="og:title" content="motiken.fun お問い合わせ送信ありがとうございます" />
-      <meta property="og:description" content="お問い合わせ送信ありがとうございます　motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="website" />
-      <OgUrl path="/contact/thanks" />
-    </Head>
+    <NextSeo
+      title="お問いあわせ完了"
+      description="お問いあわせいただきありがとうございました。"
+    />
     <BaseLayout>
       <PageHead name="Contact Complete">
         <p>お問い合わせありがとうございます。</p>

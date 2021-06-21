@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styled, { css } from 'styled-components'
 import Link from 'next/link'
 
@@ -20,8 +21,8 @@ const PageMain = ({ about, blog }) => (
     <StSection colored>
       <h2 className="title">Career</h2>
       <dl className="career">
-        {about.careers.map(career => (
-          <div>
+        {about.careers.map((career, i) => (
+          <div key={i}>
              <dt className="career-year">{career.year}</dt>
              <dd className="career-title">{career.title}</dd>
              <dd className="career-body">{career.body}</dd>
@@ -32,11 +33,11 @@ const PageMain = ({ about, blog }) => (
     <StSection>
       <h2 className="title">Skills</h2>
       <dl className="skill">
-        {about.skills.map(skill => (
-          <>
-            <dt className="skill-title"><i class="material-icons-outlined">{skill.icon}</i>{skill.title}</dt>
+        {about.skills.map((skill, i) => (
+          <Fragment key={i}>
+            <dt className="skill-title"><i className="material-icons-outlined">{skill.icon}</i>{skill.title}</dt>
             <dd className="skill-body">{skill.body}</dd>
-          </>
+          </Fragment>
         ))}
       </dl>
     </StSection>
@@ -47,11 +48,11 @@ const PageMain = ({ about, blog }) => (
     <StSection>
       <h2 className="title">Like</h2>
       <dl className="skill">
-        {about.likes.map(like => (
-          <>
-             <dt className="skill-title"><i class="material-icons-outlined">{like.icon}</i>{like.title}</dt>
+        {about.likes.map((like, i) => (
+          <Fragment key={i}>
+             <dt className="skill-title"><i className="material-icons-outlined">{like.icon}</i>{like.title}</dt>
              <dd className="skill-body">{like.body}</dd>
-          </>
+          </Fragment>
         ))}
       </dl>
     </StSection>
@@ -62,7 +63,7 @@ const PageMain = ({ about, blog }) => (
         <ul>
           {blog.map(blog => (
             <li key={blog.id}>
-              <Link href={`blog/${blog.id}`}>
+              <Link href={`/blog/${blog.id}`}>
                 <a>{blog.icon+" "+blog.title}</a>
               </Link>
             </li>

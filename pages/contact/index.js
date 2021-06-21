@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { useForm, ValidationError } from '@formspree/react'
 
 import BaseLayout from '@/components/BaseLayout'
-import Head, { OgUrl } from '@/components/Head'
+import { NextSeo } from 'next-seo'
 import PageHead from '@/components/PageHead'
 import Box from '@/components/Box'
 
@@ -33,7 +33,7 @@ function ContactForm() {
         errors={state.errors}
       />
       <label htmlFor="message">
-        <i class="fas fa-envelope-open-text mr-2" />内容
+        <i className="fas fa-envelope-open-text mr-2" />内容
       </label>
       <textarea
         id="message"
@@ -80,14 +80,10 @@ function PageMain() {
 
 function ContactIndex() {
   return <>
-    <Head>
-      <title>motiken.fun お問い合わせページ</title>
-      <meta property="og:title" content="motiken.fun お問い合わせページ" />
-      <meta property="og:description" content="お問い合わせページ　motikenサイト 現在、鋭意製作中" />
-      <meta property="og:image" content={require("@/assets/images/icon.jpg")} />
-      <meta property="og:type" content="website" />
-      <OgUrl path="/contact" />
-    </Head>
+    <NextSeo
+      title="お問いあわせ"
+      description="Webサイト制作・システム改修のお問い合わせはこちらのページでお問い合わせください。"
+    />
     <BaseLayout>
       <PageHead name="Contact">
         <p>お問い合わせ</p>
