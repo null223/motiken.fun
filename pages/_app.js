@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap-grid.css'
 // import 'slick-carousel/slick/slick.css'
 // import 'pattern.css/dist/pattern.min.css'
 
+import { useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
