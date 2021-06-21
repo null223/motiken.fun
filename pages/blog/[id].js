@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { htmlToText } from 'html-to-text'
 import styled, { css } from 'styled-components'
-import dayjs from '@/config/dayjs'
-import Api from '@/config/api'
+import { formatDate } from '@/lib/dayjs'
+import Api from '@/lib/api'
 
 import BaseLayout from '@/components/BaseLayout'
 import { NextSeo } from 'next-seo'
@@ -41,8 +41,8 @@ function PageMain({ blog }) {
               </div>
             )}
             <h1>{blog.title}</h1>
-            <p>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY/MM/DD')}</p>
-            <p className="category">{blog.category && `${blog.category.name}`}</p>
+            <p className="blog-published">{formatDate(blog.publishedAt)}</p>
+            <p className="blog-category">{blog.category && `${blog.category.name}`}</p>
             <div
               dangerouslySetInnerHTML={{
                 __html: `${blog.body}`,
@@ -86,6 +86,18 @@ ${({theme}) => css`
     justify-content: center;
     align-items: center;
     margin-bottom: 1.5rem;
+  }
+  .blog-published {
+    color: ${theme.colors.black_light};
+    font-size: .875rem;
+    margin-bottom: .25rem;
+    text-align: right;
+  }
+  .blog-category {
+    background: linear-gradient(transparent 66%, yellow 66%);
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 2px;
   }
   & h1 {
     font-size: 1.25rem;

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
-import  Api from '@/config/api'
+import  Api from '@/lib/api'
 import BaseLayout from '@/components/BaseLayout'
 
 import { NextSeo } from 'next-seo'
