@@ -13,7 +13,6 @@ const colors = {
   black: "#24292e",
   black_light: "#404040",
   "gray": "#4c5762",
-  // "gray": "#959da5",
 }
 
 
