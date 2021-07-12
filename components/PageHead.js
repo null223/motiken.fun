@@ -20,7 +20,7 @@ ${({theme}) => css`
   padding-left: 15px;
   padding-right: 15px;
   & h1 {
-    font-family: 'FredokaOne';
+    font-family: 'FredokaOne', sans-serif;
   }
   & p {
     color: ${theme.colors.gray};
