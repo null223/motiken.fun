@@ -12,7 +12,7 @@ function PageMain({ data }) {
               <div className="px-4">
                 <p>
                   この利用規約（以下，「本規約」といいます。）は，
-                  <b>null<a href="#check1">*</a></b>
+                  <b>null<a href="#check1">*1</a></b>
                   （以下，「当社」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。閲覧されているユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
                 </p>
               </div>
@@ -96,12 +96,12 @@ function PageMain({ data }) {
                     <li>前項に従った本サービスの内容もしくはシステムの変更、または本規約の変更により生じたいかなる損害等についても責任を負いません。</li>
                   </ol>
               </div>
-              <div className="pt-3">
+              <div className="pt-3 px-3">
                 <p>注釈</p>
                 <ol>
-                  <li>*
+                  <li>
                     <div id="check1">
-                      <p className="sup">こちらが屋号になります。</p>
+                      *<p className="sup d-inline">こちらが屋号になります。</p>
                     </div>
                   </li>
                 </ol>
