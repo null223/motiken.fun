@@ -1,8 +1,13 @@
 
+import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
 const Footer = () => (
-  <StFooter></StFooter>
+  <StFooter>
+    <div className="p-5">
+      <Link href="/terms">利用規約</Link>
+    </div>
+  </StFooter>
 )
 
 export default Footer
