@@ -97,9 +97,14 @@ function PageMain({ data }) {
                   </ol>
               </div>
               <div className="pt-3">
-                <div id="check1">
-                  <p className="sup">こちらが屋号になります。</p>
-                </div>
+                <p>注釈</p>
+                <ol>
+                  <li>*
+                    <div id="check1">
+                      <p className="sup">こちらが屋号になります。</p>
+                    </div>
+                  </li>
+                </ol>
               </div>
             </Box>
           </StBlog>
