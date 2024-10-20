@@ -12,13 +12,13 @@ import PageMain from '@/components/pages/Top'
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const blogs = await Api
-    .get({
-      endpoint: 'blog',
-      queries: { limit: 30, fieids: 'id,title,icon' },
-    })
-    .then(res => res)
-    .catch(() => null);
+  // const blogs = await Api
+  //   .get({
+  //     endpoint: 'blog',
+  //     queries: { limit: 30, fieids: 'id,title,icon' },
+  //   })
+  //   .then(res => res)
+  //   .catch(() => null);
 
   const about = await Api
     .get({endpoint: 'about'})
@@ -26,7 +26,7 @@ export const getStaticProps = async () => {
     .catch(() => null);
   return {
     props: {
-      blog: blogs.contents,
+      // blog: blogs.contents,
       about: about
     },
   }

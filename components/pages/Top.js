@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import Box from '@/components/Box'
 
-const PageMain = ({ about, blog }) => (
+const PageMain = ({ about }) => (
   <main>
     <StSection className="pb-2">
       <h2 className="title">{about.motiken.title}</h2>
@@ -56,7 +56,7 @@ const PageMain = ({ about, blog }) => (
         ))}
       </dl>
     </StSection>
-    <StSection>
+    {/* <StSection>
       <Box
         header="Blog"
       >
@@ -70,7 +70,7 @@ const PageMain = ({ about, blog }) => (
           ))}
         </ul>
       </Box>
-    </StSection>
+    </StSection> */}
   </main>
 )
 
