@@ -67,7 +67,7 @@ function BlogId({ blog }) {
       description={htmlToText(blog.body, {limits: 40})}
       openGraph={{
         type: "article",
-        images: [{url: blog.image ? blog.image.url : require("@/assets/images/ogp.png")}]
+        // images: [{url: blog.image ? blog.image.url : require("../../assets/images/ogp.png")}]
       }}
     />
     <BaseLayout>
