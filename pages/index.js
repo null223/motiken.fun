@@ -37,7 +37,7 @@ function Home(props) {
     <NextSeo />
     <BaseLayout>
       <Hero>
-        <img src={require('../assets/images/hero-video_cmp.gif')} alt="モチ研" />
+        <img src="/hero-video_cmp.gif" alt="モチ研" />
       </Hero>
       <PageHead name="Top">
         <p>はじめまして、なるです。</p>

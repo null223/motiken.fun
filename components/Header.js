@@ -7,20 +7,17 @@ const Header = () => {
     <StHeader className="header">
       <div className="header__title">
         <Link href="/">
-          <a>
             motiken.fun
-          </a>
         </Link>
       </div>
       <div className="header__nav">
-        <Link href="/">
-          <a>TOP</a>
+        <Link href="/">TOP
         </Link>
         <Link href="/about">
-          <a>ABOUT</a>
+          ABOUT
         </Link>
         <Link href="/contact">
-          <a>CONTACT</a>
+          CONTACT
         </Link>
       </div>
     </StHeader>
