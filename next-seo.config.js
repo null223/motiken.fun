@@ -9,7 +9,7 @@ export default {
     locale: 'ja_JP',
     site_name: 'motiken',
     images: [
-      { url: `https://${process.env.NEXT_PUBLIC_DOMAIN}${require('./assets/images/ogp.png')}` }
+      { url: `https://${process.env.NEXT_PUBLIC_DOMAIN}/ogp.png` }
     ]
   },
   twitter: {
