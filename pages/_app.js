@@ -36,6 +36,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="msapplication-TileColor" content={theme.colors.primary} />
         <meta name="theme-color" content={theme.colors.primary} />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet" />
       </Head>
       {/*<Header />*/}
