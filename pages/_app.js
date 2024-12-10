@@ -13,7 +13,8 @@ import Head from 'next/head'
 import SEO from '@/next-seo.config'
 import PretendBody from '@/components/PretendBody'
 import GlobalStyle from '@/styles/global.js'
-import theme from '@/styles/theme.js'
+// import theme from '@/styles/theme.js'
+import {getThemeColor} from '@/core/services/theme.service'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -27,6 +28,8 @@ function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
+  const theme = getThemeColor()
 
   return (
     <ThemeProvider theme={theme}>
