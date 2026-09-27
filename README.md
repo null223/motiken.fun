@@ -32,3 +32,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## なるに聞きたい (/ask)
+
+なる本人・サイトに関する質問だけに答える Q&A。構成:
+
+- `pages/ask.js` / `components/pages/Ask.js` — UI
+- `pages/api/ask.js` — レート制限 → キャッシュ → Jev 話題判定 → Claude 回答生成 → Jev 根拠チェック → ログ
+- `lib/ask/*` — 各段の実装
+- `knowledge/naru.md` — 知識ベース。ここと microCMS `about` だけを根拠に答える
+- `scripts/weekly-digest.mjs` + `.github/workflows/weekly-digest.yml` — 週次で未回答質問を PR に起こす
+
+必要な env は `.env.example` を参照。GitHub Actions には `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` を secrets に登録する。

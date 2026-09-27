@@ -1,0 +1,38 @@
+name: weekly-ask-digest
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'   # 毎週月曜 09:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Collect unknown questions
+        env:
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+        run: node scripts/weekly-digest.mjs
+      - name: Open PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: ask/weekly-digest
+          title: 'なるに聞きたい: 今週の未回答質問'
+          commit-message: 'chore(ask): add unanswered questions from the week'
+          body: |
+            `/ask` で答えられなかった質問を `knowledge/naru.md` の「未回答」に追記しました。
+            `A: TODO` を実際の回答に書き換えて merge すると、次のデプロイから答えられるようになります。
+            答えたくない質問は行ごと削除してください。
+          labels: ask-digest
+          delete-branch: true

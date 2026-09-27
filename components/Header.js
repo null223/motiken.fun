@@ -19,6 +19,9 @@ const Header = () => {
         <Link href="/contact">
           CONTACT
         </Link>
+        <Link href="/ask">
+          ASK
+        </Link>
       </div>
     </StHeader>
   )
@@ -31,6 +34,9 @@ ${({theme}) => css`
   background-color: ${theme.colors.primary};
   padding: 16px;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
   color: ${theme.colors.white};
   & a {
     color: ${theme.colors.white};
@@ -50,9 +56,9 @@ ${({theme}) => css`
     }
     &__nav {
       margin-left: auto;
-      & a {
-        margin-left: .5rem;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
     }
   }
 `}`
