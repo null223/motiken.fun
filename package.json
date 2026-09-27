@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "ask:digest": "node scripts/weekly-digest.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
     "@formspree/react": "^2.2.3",
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "@upstash/ratelimit": "^2.2.0",
+    "@upstash/redis": "^1.39.0",
     "bootstrap": "^4.6.0",
     "dayjs": "^1.10.4",
     "html-to-text": "^7.0.0",
@@ -20,7 +25,8 @@
     "pattern.css": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/react": "19.0.1",
